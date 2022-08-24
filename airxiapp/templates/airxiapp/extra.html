@@ -1,0 +1,18 @@
+<div class="first-form" id="model_form">
+    <label for="model">
+      <select name="car" id="model">
+        <option value="">-------</option>
+
+        {% if models %}
+          {% for taxi in models %}
+            <option value="{{taxi.model}}">{{taxi.model}}</option>
+          {% endfor %}
+        {% else %}
+          {% for taxi in all %}
+            <option value="{{taxi.model}}">{{taxi.model}}</option>
+          {% endfor %}
+        {% endif %}
+        
+      </select>
+    </label>
+  </div>

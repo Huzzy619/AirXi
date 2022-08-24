@@ -1,0 +1,51 @@
+{% extends 'airxiapp/base.html' %}
+{% load static %}
+
+{% block background %}
+  <img alt="taxi-bg" id="taxi-bg" src="{% static 'airxiapp/img/slider-1-2.jpg' %}">
+{% endblock background %}
+
+{% block content %}
+<main>
+  {% block hero %}
+  <div class="hero-section">
+    <div class="page-link">
+      <p><a href="index.html">Home</a> . <span>Contact</span></p>
+    </div>
+    <div class="about-header">
+      <h1>Contact</h1>
+    </div>
+  </div>
+  {% endblock hero %}
+
+  <div class="contact-cont">
+    <i class="fa-solid fa-circle"></i>
+    <p>Contact with us now</p>
+    <h1>Leave a message</h1>
+    <div class="contact-form">
+      <form id="cf" class="contact-form" method="post">
+        {% csrf_token %}
+
+        <label for="name">
+          <input type="text" name="name" id="name" placeholder="Your name">
+        </label>
+        <label for="email">
+          <input type="email" name="email" id="email" placeholder="Email address">
+        </label>
+        <label for="phone">
+          <input type="text" name="phone" id="phone" placeholder="Phone">
+        </label>
+        <label for="subject">
+          <input type="text" name="subject" id="subject" placeholder="Subject">
+        </label>
+        <label for="message">
+          <input type="text" name="message" id="message" placeholder="Write message">
+        </label>
+        <button type="submit" id="send">Send message</button>
+      </form>
+    </div>
+  </div>
+</main>
+
+{% endblock content %}
+

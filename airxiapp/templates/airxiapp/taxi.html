@@ -1,0 +1,178 @@
+{% extends 'airxiapp/base.html' %}
+{% load static %}
+
+
+{% block background %}
+  <img alt="taxi-bg" id="taxi-bg" src="{% static 'airxiapp/img/slider-1-2.jpg' %}"> 
+{% endblock background %}
+
+{% block content %}
+
+
+<main>
+
+  {% block hero %}
+  <div class="hero-section">
+    <div class="page-link">
+      <p><a href="index.html">Home</a> . <span>Taxi</span></p>
+    </div>
+    <div class="about-header">
+      <h1>Our Taxies</h1>
+    </div>
+  </div>
+  {% endblock hero %}
+
+  <div class="intro-taxi">
+    <i class="fa-solid fa-circle"></i>
+    <h3>Find Your Car For Safe Journey</h3>
+    <h1>Popular Taxies</h1>
+    <div class="border-line"></div>
+  </div>
+
+  <div class="taxi-container">
+    <div class="taxi-boxes">
+      <div class="taxi-image">
+        <img alt="popular1" class="car-image" src="{% static 'airxiapp/img/popular-01.png' %}">
+      </div>
+      <div class="taxi-info">
+        <div class="banner-taxi"></div>
+        <h2 class="car-name">SUV AUGRO</h2>
+        <h4 class="car-model">EC1 2010</h4>
+      </div>
+    </div>
+
+    <div class="taxi-boxes">
+      <div class="taxi-image">
+        <img alt="popular2" class="car-image" src="{% static 'airxiapp/img/popular-02.png'%}">
+      </div>
+      <div class="taxi-info">
+        <div class="banner-taxi"></div>
+        <h2 class="car-name">TOYOTA CAMO</h2>
+        <h4 class="car-model">DE1 2010</h4>
+      </div>
+    </div>
+
+    <div class="taxi-boxes">
+      <div class="taxi-image">
+        <img alt="popular3" class="car-image" src="{% static 'airxiapp/img/popular-03.png'%}">
+      </div>
+      <div class="taxi-info">
+        <div class="banner-taxi"></div>
+        <h2 class="car-name">LIMOUSINE AUGRO</h2>
+        <h4 class="car-model">BD 2019</h4>
+      </div>
+    </div>
+
+    <div class="taxi-boxes">
+      <div class="taxi-image">
+        <img alt="popular4" class="car-image" src="{% static 'airxiapp/img/popular-04.png'%}">
+      </div>
+      <div class="taxi-info">
+        <div class="banner-taxi"></div>
+        <h2 class="car-name">COBA MALO</h2>
+        <h4 class="car-model">GE C1 MODEL</h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="rental">
+    <div class="intro-taxi rental-tax">
+    <i class="fa-solid fa-circle"></i>
+    <h3>Find Your Car For Safe Journey</h3>
+    <h1>Rental Taxies</h1>
+    <div class="border-line"></div>
+  </div>
+
+  <div class="taxi-container">
+    <div class="taxi-boxes">
+      <div class="taxi-image">
+        <img alt="popular1" class="car-image" src="{% static 'airxiapp/img/popular-01.png'%}">
+      </div>
+      <div class="taxi-info">
+        <div class="banner-taxi"></div>
+        <h2 class="car-name">SUV AUGRO</h2>
+        <h4 class="car-model">EC1 2010</h4>
+      </div>
+    </div>
+
+    <div class="taxi-boxes">
+      <div class="taxi-image">
+        <img alt="popular2" class="car-image" src="{% static 'airxiapp/img/popular-02.png'%}">
+      </div>
+      <div class="taxi-info">
+        <div class="banner-taxi"></div>
+        <h2 class="car-name">TOYOTA CAMO</h2>
+        <h4 class="car-model">DE1 2010</h4>
+      </div>
+    </div>
+
+    <div class="taxi-boxes">
+      <div class="taxi-image">
+        <img alt="popular3" class="car-image" src="{% static 'airxiapp/img/popular-03.png'%}">
+      </div>
+      <div class="taxi-info">
+        <div class="banner-taxi"></div>
+        <h2 class="car-name">LIMOUSINE AUGRO</h2>
+        <h4 class="car-model">BD 2019</h4>
+      </div>
+    </div>
+
+    <div class="taxi-boxes">
+      <div class="taxi-image">
+        <img alt="popular4" class="car-image" src="{% static 'airxiapp/img/popular-04.png'%}">
+      </div>
+      <div class="taxi-info">
+        <div class="banner-taxi"></div>
+        <h2 class="car-name">COBA MALO</h2>
+        <h4 class="car-model">GE C1 MODEL</h4>
+      </div>
+    </div>
+
+    <div class="taxi-boxes">
+      <div class="taxi-image">
+        <img alt="popular5" class="car-image" src="{% static 'airxiapp/img/popular-07.png'%}">
+      </div>
+      <div class="taxi-info">
+        <div class="banner-taxi"></div>
+        <h2 class="car-name">BENX AUGRO</h2>
+        <h4 class="car-model">EC1 2010</h4>
+      </div>
+    </div>
+
+    <div class="taxi-boxes">
+      <div class="taxi-image">
+        <img alt="popular6" class="car-image" src="{% static 'airxiapp/img/popular-08.png'%}">
+      </div>
+      <div class="taxi-info">
+        <div class="banner-taxi"></div>
+        <h2 class="car-name">TOYOTA CAMOLINA</h2>
+        <h4 class="car-model">DE1 2078</h4>
+      </div>
+    </div>
+
+    <div class="taxi-boxes">
+      <div class="taxi-image">
+        <img alt="popular7" class="car-image" src="{% static 'airxiapp/img/popular-03.png'%}">
+      </div>
+      <div class="taxi-info">
+        <div class="banner-taxi"></div>
+        <h2 class="car-name">HYBRID AUGRO</h2>
+        <h4 class="car-model">BD 2719</h4>
+      </div>
+    </div>
+
+    <div class="taxi-boxes">
+      <div class="taxi-image">
+        <img alt="popular8" class="car-image" src="{% static 'airxiapp/img/popular-04.png' %}">
+      </div>
+      <div class="taxi-info">
+        <div class="banner-taxi"></div>
+        <h2 class="car-name">MABA BALO</h2>
+        <h4 class="car-model">DBE C1 MODEL</h4>
+      </div>
+    </div>
+  </div>
+  </div>
+</main>
+{% endblock content %}
+

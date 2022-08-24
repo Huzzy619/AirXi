@@ -1,0 +1,175 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>AirXi</title>
+  <meta content="Enjoy your comfortable trip with the fastest transport service for airport arrivals"
+        name="description">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+
+  <meta content="AirXi" property="og:title">
+  <meta content="website" property="og:type">
+  <meta content="" property="og:url">
+  <meta content="" property="og:image">
+
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
+  <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link href="{% static 'airxiapp/site.webmanifest' %}"  rel="manifest"> 
+ <link href="{% static 'airxiapp/icon.png' %}" type="image/x-icon" rel="shortcut icon" >
+  <!-- Place favicon.ico in the root directory -->
+
+  <link href="{% static 'airxiapp/css/normalize.css'%}" rel="stylesheet">
+  <link href="{% static 'airxiapp/css/main.css'%}" rel="stylesheet">
+  <link href="{% static 'airxiapp/css/index.css'%}" rel="stylesheet">
+  <link href="{% static 'airxiapp/css/about.css'%}" rel="stylesheet">
+  <link href="{% static 'airxiapp/css/taxi.css'%}" rel="stylesheet">
+  <link href="{% static 'airxiapp/css/ride.css'%}" rel="stylesheet">
+  <link href="{% static 'airxiapp/css/contact.css'%}" rel="stylesheet">
+
+  <meta content="#fafafa" name="theme-color">
+  <script src="{% static 'airxiapp/js/main.js' %}"></script>
+  <script crossorigin="anonymous" src="https://kit.fontawesome.com/04feaeeba5.js"></script>
+</head>
+
+<body>
+    <header>
+    
+      <div class="background">
+        {% block background %}
+
+        {% endblock background %}
+
+    </div>
+      <div class="info-flex">
+        <div class="email-container">
+          <i class="fa-solid fa-envelope"></i>
+          <p>needhelp@airxi.com</p>
+        </div>
+        <div class="logo-container">
+          <img alt="taxi-logo" class="taxi-logo" src="{% static 'airxiapp/img/taxi.png'%}">
+          <p>AIRXI</p>
+        </div>
+        <div class="social-media-cover">
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-google"></i></a>
+        </div>
+      </div>
+    </header>
+    
+    <nav>
+      <div class="nav-bar">
+        <div class="pages navbar">
+          <div class="page">
+            <p><a href="{% url 'index' %}">HOME</a></p> 
+            <p><a href="{% url 'about' %}">ABOUT</a></p>
+            <p><a href="{% url 'taxi' %}">TAXI</a></p>
+            <p><a href="{% url 'ride' %}">BOOK A RIDE</a></p>
+            <p><a href="{% url 'contact' %}">CONTACT</a></p>
+          </div>
+          <div class="phone-cover phonenav">
+            <div class="phone">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div class="contact">
+              <p id="no">555-666-777</p>
+              <p id="line">PHONE LINE</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    
+    {% block content %}
+    
+    {% block hero %}{% endblock hero %}
+    
+    {% endblock content %}
+
+    
+<footer class="foot">
+    <div class="footer">
+      <div class="first">
+        <h3>About</h3>
+        <p id="rum">There are many various of pass of lorem ipsum available but the majority have suffered in some form by
+          injected humour or words</p>
+        <div class="social-media-cover">
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-google"></i></a>
+        </div>
+      </div>
+      <div class="first links">
+        <h3>Links</h3>
+        <a href="about.html"><p>About</p></a>
+        <a href="ride.html"><p>Get a Taxi</p></a>
+        <a href="#"><p>Our Reviews</p></a>
+        <a href="contact.html"><p>Contact</p></a>
+      </div>
+      <div class="first contact">
+        <h3>Contact</h3>
+        <p id="addr">86 Road Brooklyn Street, 600, New York, USA</p>
+        <div class="email-container">
+          <i class="fa-solid fa-envelope"></i>
+          <p>needhelp@airxi.com</p>
+        </div>
+        <div class="email-container">
+          <i class="fa-solid fa-square-phone"></i>
+          <p>555 666 777</p>
+        </div>
+      </div>
+      <div class="first newsletter">
+        <h3>Newsletter</h3>
+        <p id="sign">Sign up now for our mailing list to get all latest news and updates from airxi company</p>
+        <div class="email">
+          <form action="">
+            <label>
+              <input id="mailing" name="mail" placeholder="Enter your email" type="text">
+              <input id="go" type="submit" value="Go">
+            </label>
+          </form>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  
+  <script src="{% static 'airxiapp/js/vendor/modernizr-3.11.2.min.js'%}"></script>
+  <script src="{% static 'airxiapp/js/plugins.js' %}"></script> 
+  
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () {
+      ga.q.push(arguments)
+    };
+    ga.q = [];
+    ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('set', 'transport', 'beacon');
+    ga('send', 'pageview')
+  </script>
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+  <script src="{% static 'airxiapp/js/contact.js' %}"></script>
+  <script src="{% static 'airxiapp/js/ride.js' %}"></script>
+  
+
+    <script>
+      alertify.set('notifier','position', 'top-right');
+
+      {% for msg in messages %}
+
+           alertify.success('{{msg}}' );
+
+      {% endfor %}
+      
+    </script>
+  </body>
+  
+  </html>
+  
