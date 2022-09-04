@@ -62,3 +62,5 @@ class Contact (models.Model):
 
 class Newsletter(models.Model):
     email = models.EmailField(unique=True)
+
+    

@@ -7,7 +7,7 @@ class MakeBookingSerializer (serializers.ModelSerializer):
     class Meta:
         model = Booking
         fields = ['name', 'email', 'phone', 'airport',
-                  'passengers', 'drop_off_address', 'date', 'time']
+                  'passengers', 'drop_off_address', 'date', 'time', 'taxi']
 
     def save(self, **kwargs):
         new_reference_number = reference_number_generator()
@@ -32,7 +32,7 @@ class BookingSerializer (serializers.ModelSerializer):
     class Meta:
         model = Booking
         fields = ['id', 'reference_number', 'name', 'email', 'phone',
-                  'airport', 'passengers', 'drop_off_address', 'date', 'time']
+                  'airport', 'passengers', 'drop_off_address', 'date', 'time', 'taxi']
 
 
 class TaxiSerializer(serializers.ModelSerializer):

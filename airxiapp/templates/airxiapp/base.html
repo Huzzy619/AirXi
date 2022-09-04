@@ -124,13 +124,15 @@
           <p>555 666 777</p>
         </div>
       </div>
+
       <div class="first newsletter">
         <h3>Newsletter</h3>
         <p id="sign">Sign up now for our mailing list to get all latest news and updates from airxi company</p>
         <div class="email">
-          <form action="">
+          <form action="{% url 'newsletter' %}" method='post'>
+            {% csrf_token %}
             <label>
-              <input id="mailing" name="mail" placeholder="Enter your email" type="text">
+              <input id="mailing" name="email" placeholder="Enter your email" type="email">
               <input id="go" type="submit" value="Go">
             </label>
           </form>

@@ -7,6 +7,15 @@
     <title>Document</title>
 </head>
 <body>
+
+    {% for taxi in all_taxis %}
+    
+    <ul>
+        <li>{{taxi.id}}--{{taxi.model}}</li>
+
+    </ul>
+    {% endfor %}
+
     <form action="" method="post">
         {% csrf_token %}
         {{form.name}}
