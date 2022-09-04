@@ -23,28 +23,27 @@
     <p>Contact with us now</p>
     <h1>Leave a message</h1>
     <div class="contact-form">
-      <form id="cf" class="contact-form" method="post">
+      <form id="cf" class="contact-form" method="post" action="{% url 'contact' %}">
         {% csrf_token %}
-
         <label for="name">
-          <input type="text" name="name" id="name" placeholder="Your name">
+          {{form.name}}<!-- <input type="text" name="name" id="name" placeholder="Your name"> -->
         </label>
         <label for="email">
-          <input type="email" name="email" id="email" placeholder="Email address">
+          {{form.email}}<!-- <input type="email" name="email" id="email" placeholder="Email address"> -->
         </label>
         <label for="phone">
-          <input type="text" name="phone" id="phone" placeholder="Phone">
+          {{form.phone}}<!--  <input type="text" name="phone" id="phone" placeholder="Phone"> -->
         </label>
         <label for="subject">
-          <input type="text" name="subject" id="subject" placeholder="Subject">
+          {{form.subject}}<!-- <input type="text" name="subject" id="subject" placeholder="Subject"> -->
         </label>
         <label for="message">
-          <input type="text" name="message" id="message" placeholder="Write message">
+          {{form.message}}<!-- <input type="text" name="message" id="message" placeholder="Write message"> -->
         </label>
         <button type="submit" id="send">Send message</button>
       </form>
     </div>
-  </div>
+  </div> 
 </main>
 
 {% endblock content %}

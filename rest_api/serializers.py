@@ -22,7 +22,7 @@ class MakeBookingSerializer (serializers.ModelSerializer):
                 "{'error':'The Booking has already been made'}")
 
         self.instance = Booking.objects.create(
-            reference_number = new_reference_number,
+            reference_number=new_reference_number,
             **self.validated_data
         )
         return self.instance

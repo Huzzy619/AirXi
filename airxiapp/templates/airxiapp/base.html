@@ -28,6 +28,7 @@
   <link href="{% static 'airxiapp/css/taxi.css'%}" rel="stylesheet">
   <link href="{% static 'airxiapp/css/ride.css'%}" rel="stylesheet">
   <link href="{% static 'airxiapp/css/contact.css'%}" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'airxiapp/izi/dist/css/iziToast.min.css' %}">
 
   <meta content="#fafafa" name="theme-color">
   <script src="{% static 'airxiapp/js/main.js' %}"></script>
@@ -50,7 +51,7 @@
         </div>
         <div class="logo-container">
           <img alt="taxi-logo" class="taxi-logo" src="{% static 'airxiapp/img/taxi.png'%}">
-          <p>AIRXI</p>
+          <p>AirXi</p>
         </div>
         <div class="social-media-cover">
           <a href="#"><i class="fa-brands fa-twitter"></i></a>
@@ -68,7 +69,7 @@
             <p><a href="{% url 'index' %}">HOME</a></p> 
             <p><a href="{% url 'about' %}">ABOUT</a></p>
             <p><a href="{% url 'taxi' %}">TAXI</a></p>
-            <p><a href="{% url 'ride' %}">BOOK A RIDE</a></p>
+            <p><a href="{% url 'make_booking' %}">BOOK A RIDE</a></p>
             <p><a href="{% url 'contact' %}">CONTACT</a></p>
           </div>
           <div class="phone-cover phonenav">
@@ -86,7 +87,7 @@
     
     {% block content %}
     
-    {% block hero %}{% endblock hero %}
+    {% block hero %}{% endblock hero %}  
     
     {% endblock content %}
 
@@ -155,7 +156,7 @@
     ga('send', 'pageview')
   </script>
   <script async src="https://www.google-analytics.com/analytics.js"></script>
-  <script src="{% static 'airxiapp/js/contact.js' %}"></script>
+  <!-- <script src="{% static 'airxiapp/js/contact.js' %}"></script> -->
   <script src="{% static 'airxiapp/js/ride.js' %}"></script>
   
 
@@ -168,6 +169,62 @@
 
       {% endfor %}
       
+    </script>
+
+<script src="{% static 'airxiapp/izi/dist/js/iziToast.min.js' %}"></script>   
+
+<script>
+       {% if form.errors %}
+          {% for field in form %}
+            {% for error in field.errors %}
+                iziToast.error({
+                  title:"Error",
+                  message : "{{error}}",
+                  position: "topRight"
+                });
+        {% endfor %}
+    {% endfor %}
+{% endif %}
+    </script>
+
+    <script>
+    {% if messages %}
+        {% for message in messages %}
+          {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %} 
+
+          
+                iziToast.success({
+                    title: 'OK',
+                    message: '{{message}}',
+                    position:  'topRight',
+                });
+          {% elif message.level == DEFAULT_MESSAGE_LEVELS.ERROR %} 
+                iziToast.error({
+                    title: 'Error',
+                    message: '{{message}}',
+                    position:  'topRight',
+        
+                });
+          {% elif message.level == DEFAULT_MESSAGE_LEVELS.WARNING %} 
+                iziToast.warning({
+                    title: 'Caution',
+                    message: '{{message}}',
+                    position:  'topRight',
+                    timeout: 10000,
+        
+                });
+        
+          {% elif message.level == DEFAULT_MESSAGE_LEVELS.INFO %} 
+                iziToast.info({
+                    title: 'Hey',
+                    message: '{{message}}',
+                    position:  'topRight',
+        
+                });
+    
+        {% endif %}
+    {% endfor %}
+{% endif %}
     </script>
   </body>
   

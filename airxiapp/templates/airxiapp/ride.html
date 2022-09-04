@@ -35,73 +35,73 @@
   <div class="form">
     <h2>Select Information</h2>
 
-    <form action="" id="info">
-
+    <form action="{% url 'make_booking' %}" id="info" method="post">
+      {% csrf_token %}
       <div class="first-form">
 
         <label for="name">
-          <input id="name" name="your_name" placeholder="Your name" type="text">
+          {{booking_form.name}}
         </label>
 
         <label for="email">
-          <input id="email" name="email" placeholder="Email address" type="email">
+          {{booking_form.email}}
         </label>
 
         <label for="phone">
-          <input id="phone" name="phone" placeholder="Phone" type="number">
+          {{booking_form.phone}}
         </label>
 
         <label for="passengers">
-          <input id="passengers" name="passengers" placeholder="Passenger(s)" type="number">
+          {{booking_form.passengers}}
         </label>
 
         <label for="airport">
           <select data-display-toggle="Airport" id="airport" name="airport">
             <option value="">Select Airport</option>
             {% for airport in airports %}
-              <option value="{{airport.id}}">{{airport.name}}</option>
+            <option value="{{airport.id}}">{{airport.name}}</option>
             {% endfor %}
           </select>
         </label>
 
         <label for="drop-off">
-          <input id="drop-off" name="drop-off" placeholder="Drop-Off Address" type="text">
+          {{booking_form.drop_off_address}}
         </label>
 
         <label for="date">
-          <input id="date" name="date" placeholder="Select Date" type="date">
+          {{booking_form.date}}
         </label>
 
         <label for="time">
-          <input id="time" name="time" placeholder="Select time" type="time">
+          {{booking_form.time}}
         </label>
 
       </div>
 
       <h2>Select Car Type</h2>
 
-        <ul class="form2">
-            <li>
-              <input type="radio" name="taxi" id="any" value="Any"><label for="any">Any type</label>
-            </li>
-            <li>
-              <input type="radio" name="taxi" id="suv" value="SUV"><label for="suv">SUV</label>
-            </li>
-            <li>
-              <input type="radio" name="taxi" id="limousine" value="Limousine"><label for="limousine">Limousine</label>
-            </li>
-            <li>
-              <input type="radio" name="taxi" id="hybrid" value="Hybrid"><label for="hybrid">Hybrid</label>
-            </li>
-            <li>
-              <input type="radio" name="taxi" id="cab" value="Cab"><label for="cab">Cab</label>
-            </li>
-        </ul>
-        
+      <ul class="form2">
+        <li>
+          <input type="radio" name="taxi" id="any" value="Any"><label for="any">Any type</label>
+        </li>
+        <li>
+          <input type="radio" name="taxi" id="suv" value="SUV"><label for="suv">SUV</label>
+        </li>
+        <li>
+          <input type="radio" name="taxi" id="limousine" value="Limousine"><label for="limousine">Limousine</label>
+        </li>
+        <li>
+          <input type="radio" name="taxi" id="hybrid" value="Hybrid"><label for="hybrid">Hybrid</label>
+        </li>
+        <li>
+          <input type="radio" name="taxi" id="cab" value="Cab"><label for="cab">Cab</label>
+        </li>
+      </ul>
+
 
       <h2>Other Information</h2>
 
-        {% include 'airxiapp/extra.html' %}
+      {% include 'airxiapp/extra.html' %}
 
       <button id="submit" type="submit">Book Now</button>
     </form>

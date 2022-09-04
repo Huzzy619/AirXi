@@ -29,17 +29,21 @@
     <div class="border-line"></div>
   </div>
 
+  
   <div class="taxi-container">
+
+    {% for taxi in popular_taxis  %}
     <div class="taxi-boxes">
       <div class="taxi-image">
-        <img alt="popular1" class="car-image" src="{% static 'airxiapp/img/popular-01.png' %}">
+        <img alt="popular1" class="car-image" src="{{taxi.imageUrl}}">
       </div>
       <div class="taxi-info">
         <div class="banner-taxi"></div>
-        <h2 class="car-name">SUV AUGRO</h2>
-        <h4 class="car-model">EC1 2010</h4>
+        <h2 class="car-name">{{taxi.Type}}</h2>
+        <h4 class="car-model">{{taxi.model}}</h4>
       </div>
     </div>
+    {% endfor %}
 
     <div class="taxi-boxes">
       <div class="taxi-image">
@@ -73,7 +77,20 @@
         <h4 class="car-model">GE C1 MODEL</h4>
       </div>
     </div>
+
+  <div class="taxi-boxes">
+    <div class="taxi-image">
+      <img alt="popular4" class="car-image" src="{% static 'airxiapp/img/popular-04.png'%}">
+    </div>
+    <div class="taxi-info">
+      <div class="banner-taxi"></div>
+      <h2 class="car-name">COBA MALO</h2>
+      <h4 class="car-model">GE C1 MODEL</h4>
+    </div>
   </div>
+</div>
+
+
 
   <div class="rental">
     <div class="intro-taxi rental-tax">
@@ -161,16 +178,20 @@
       </div>
     </div>
 
+    {% for taxi in all_taxis  %}
     <div class="taxi-boxes">
       <div class="taxi-image">
-        <img alt="popular8" class="car-image" src="{% static 'airxiapp/img/popular-04.png' %}">
+        <img alt="popular8" class="car-image" src="{{taxi.imageUrl}}">
       </div>
       <div class="taxi-info">
         <div class="banner-taxi"></div>
-        <h2 class="car-name">MABA BALO</h2>
-        <h4 class="car-model">DBE C1 MODEL</h4>
+        <h2 class="car-name">{{taxi.Type|upper}}</h2>
+        <h4 class="car-model">{{taxi.model|upper}}</h4>
       </div>
     </div>
+    {% endfor %}
+
+
   </div>
   </div>
 </main>
