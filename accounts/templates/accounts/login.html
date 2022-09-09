@@ -1,0 +1,63 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+    {% block title %}
+    <title> Login | Ride with AirXi</title>
+    {% endblock title %}
+    
+
+        {% block content %}
+        <div class="words">
+            <div>
+                <h1>Grab a comfort ride<br>with AirXi.</h1>
+            </div>
+            <div class="talk">
+
+                AirXi offers you a comfortable and luxurious journey to your destinations
+                of choice at very affordable rates. Join now to get the soothing feeling
+                of a convinient ride.
+
+            </div>
+        </div>
+        <div class="form">
+            <div class="thereafter">
+                <p><span>Ride with AIRXI </span><br> Login to book a ride</p>
+            </div>
+            <div class="reg">
+                <form action="{% url 'login' %}" method='post'>
+                    {% csrf_token %}
+
+                    <div class="form-field">
+                        <input type="email" name="email" id="" placeholder="Email Address" class="edit" required>
+                        <span class="error"><i>Looks like this is not an email</i></span>
+                    </div>
+                    <div class="form-field">
+                        <input type="password" name="password" id="" placeholder="Password" class="edit" required>
+                        <span class="error"><i>Password cannot be empty</i></span>
+
+                    </div>
+
+                    <a href="{% url 'password_reset' %}"> Forgot Password ?</a>
+                    <button type="submit" class="claim">LOGIN</button>
+
+
+                    <a href="https://google.com" style="text-decoration: none;">
+                        <div class="google">
+                            <img src="{% static 'accounts/images/Google_Icon.webp' %}" alt="google" class="google-img">
+                            <div>
+                                Sign in with Google
+
+                            </div>
+                        </div>
+                    </a>
+                    <div class="terms">
+                        Don't have an account ? <a href="{% url 'register' %}" style="text-decoration: none;"> <span class="log-reg">Click
+                                here to Register</span> </a>
+                    </div>
+
+                </form>
+            </div>
+
+
+        </div>
+        {% endblock content %}
+    

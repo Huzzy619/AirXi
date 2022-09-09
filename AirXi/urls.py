@@ -24,6 +24,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include('airxiapp.urls')),
+    path("accounts/", include('accounts.urls')),
     path("api/", include('rest_api.urls')),
     # path("home", TemplateView.as_view(template_name = 'index.html')),
     path('__debug__/', include('debug_toolbar.urls')),

@@ -1,9 +1,7 @@
-from sqlite3 import IntegrityError
 from django.db import IntegrityError
 from django.contrib import messages
-from django.contrib.messages.views import SuccessMessageMixin
 from django.shortcuts import redirect, render
-from django.views.generic import TemplateView, ListView, CreateView
+from django.views.generic import TemplateView, ListView
 
 from airxiapp.forms import BookingForm, ContactForm
 
@@ -68,6 +66,7 @@ def make_booking(request):
 
 # This View helps make the car list dynamic on ride.html
 def model(request):
+    from airxiapp.models import Taxi
     Type = request.GET.get('Type')
     models = Taxi.objects.filter(Type=Type)
     all_models = Taxi.objects.all()
@@ -117,18 +116,9 @@ def newsletter (request):
 
 
 def test(request):
-    from .forms import BookingForm, ContactForm
 
-    form = ContactForm()
+    from airxiapp.models import Taxi
 
-    if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            form.save()
-            # messages.success(request)
-            print("saved successfully")
-            return redirect('/')
-        else:
-            print(" It did not Work")
-
-    return render(request, 'airxiapp/test.html', {"form": form})
+    Taxi.objects.filter()
+    
+    return render(request, 'airxiapp/test.html')

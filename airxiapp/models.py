@@ -22,13 +22,13 @@ class Taxi(models.Model):
     model = models.CharField(max_length=255)
     image = models.ImageField(upload_to = get_media_paths, null= True, blank=True ) 
 
-    @property
-    def imageUrl(self):
-        try:
-            url = self.image.url
-        except:
-            url = ''
-        return url
+    # @property
+    # def imageUrl(self):
+    #     try:
+    #         url = self.image.url
+    #     except:
+    #         url = ''
+    #     return url
 
     def __str__(self) -> str:
         return f'{self.Type}-{self.model}'

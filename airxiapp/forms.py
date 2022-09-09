@@ -8,7 +8,7 @@ class ContactForm(forms.ModelForm):
         fields = ['name', 'email', 'message', 'phone', 'subject']
         widgets = {
             'name': forms.TextInput(attrs={'placeholder': 'Name'}),
-            'email': forms.TextInput(attrs={'placeholder': 'Email', 'type':'email'}),
+            'email': forms.TextInput(attrs={'placeholder': 'Email', }), #'type':'email'
             'message': forms.TextInput(attrs={'placeholder': 'Enter a message here'}),
             'phone': forms.TextInput(attrs={'placeholder': 'Phone'}),
             'subject': forms.TextInput(attrs={'placeholder': 'Subject'}),

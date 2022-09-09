@@ -1,0 +1,82 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    
+    {% endblock title %}
+    <link rel="stylesheet" href="{% static 'accounts/style.css' %}">
+    <link rel="shortcut icon" href="{% static 'airxiapp/favicon.ico' %} " type="image/x-icon">
+  <link rel="stylesheet" href="{% static 'airxiapp/izi/dist/css/iziToast.min.css' %}">
+
+</head>
+
+<body>
+    <main>
+        {% block content %}
+ 
+        {% endblock content %}
+    </main>
+<script src="{% static 'airxiapp/izi/dist/js/iziToast.min.js' %}"></script>   
+
+<script>
+  {% if form.errors %}
+     {% for field in form %}
+       {% for error in field.errors %}
+           iziToast.error({
+             title:"Error",
+             message : "{{error}}",
+             position: "topRight"
+           });
+      {% endfor %}
+      {% endfor %}
+  {% endif %}
+</script>
+
+    <script>
+    {% if messages %}
+        {% for message in messages %}
+          {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %} 
+
+          
+                iziToast.success({
+                    title: 'OK',
+                    message: '{{message}}',
+                    position:  'topRight',
+                });
+          {% elif message.level == DEFAULT_MESSAGE_LEVELS.ERROR %} 
+                iziToast.error({
+                    title: 'Error',
+                    message: '{{message}}',
+                    position:  'topRight',
+        
+                });
+          {% elif message.level == DEFAULT_MESSAGE_LEVELS.WARNING %} 
+                iziToast.warning({
+                    title: 'Caution',
+                    message: '{{message}}',
+                    position:  'topRight',
+                    timeout: 10000,
+        
+                });
+        
+          {% elif message.level == DEFAULT_MESSAGE_LEVELS.INFO %} 
+                iziToast.info({
+                    title: 'Hey',
+                    message: '{{message}}',
+                    position:  'topRight',
+        
+                });
+    
+        {% endif %}
+    {% endfor %}
+{% endif %}
+    </script>
+</body>
+
+</html>

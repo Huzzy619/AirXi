@@ -71,6 +71,10 @@
             <p><a href="{% url 'taxi' %}">TAXI</a></p>
             <p><a href="{% url 'make_booking' %}">BOOK A RIDE</a></p>
             <p><a href="{% url 'contact' %}">CONTACT</a></p>
+            {% if not request.user.is_authenticated %}
+            <p><a href="{% url 'login' %}">LOGIN</a></p>
+            {% endif %}
+
           </div>
           <div class="phone-cover phonenav">
             <div class="phone">
@@ -176,18 +180,18 @@
 <script src="{% static 'airxiapp/izi/dist/js/iziToast.min.js' %}"></script>   
 
 <script>
-       {% if form.errors %}
-          {% for field in form %}
-            {% for error in field.errors %}
-                iziToast.error({
-                  title:"Error",
-                  message : "{{error}}",
-                  position: "topRight"
-                });
-        {% endfor %}
-    {% endfor %}
-{% endif %}
-    </script>
+  {% if form.errors %}
+     {% for field in form %}
+       {% for error in field.errors %}
+           iziToast.error({
+             title:"Error",
+             message : "{{error}}",
+             position: "topRight"
+           });
+      {% endfor %}
+      {% endfor %}
+  {% endif %}
+</script>
 
     <script>
     {% if messages %}

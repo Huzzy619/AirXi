@@ -1,0 +1,76 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+
+    {% block title %}
+    <title> Register | Ride with AirXi</title>
+    
+    {% endblock title %}
+    
+        {% block content %}
+        <div class="words">
+            <div>
+                <h1>Grab a comfort ride<br>with AirXi.</h1>
+            </div>
+            <div class="talk">
+
+                AirXi offers you a comfortable and luxurious journey to your destinations 
+                of choice at very affordable rates. Join now to get the soothing feeling
+                of a convinient ride.
+
+            </div>
+        </div>
+        <div class="form">
+            <div class="thereafter"><p><span>Ride with AIRXI </span><br> Create an Account to get started</p></div>
+            <div class="reg">
+                <form action="{% url 'register' %}" method='post'>
+                    {% csrf_token %}
+                    <div class="form-field">
+                        <input type="text" placeholder="Name" class="edit"  name="name" required>
+                        <span class="error"><i>Name cannot be empty</i></span>
+
+                    </div>
+                    <div class="form-field">
+                        <input type="email" name="email" id="" placeholder="Email Address" class="edit" required>
+                        <span class="error"><i>Looks like this is not an email</i></span>
+                    </div>
+                    <div class="form-field">
+                        <input type="password" name="password1" id="" placeholder="Password" class="edit"required>
+                        <span class="error"><i>Password cannot be empty</i></span>
+
+                    </div>
+
+                    <div class="form-field">
+                        <input type="password" name="password2" id="" placeholder="Confirm Password" class="edit"required>
+                        <span class="error"><i>Retype password correctly</i></span>
+
+                    </div>
+
+                    <button type="submit" class="claim">JOIN NOW</button>
+                </form>
+
+                    <a href="" style="text-decoration: none;">
+                        <div class="google">
+                            <img src="{% static 'accounts/images/Google_Icon.webp' %}" alt="google" class="google-img">
+                            <div class="google-text">
+                                Continue with Google
+
+                            </div>
+                        </div>
+                    </a>
+                    
+
+                    <div class="terms">
+                        Already have an account ?  <a href="{% url 'login' %}" style="text-decoration: none;"> <span class="log-reg">Login</span> </a> 
+                    </div>
+
+
+                <div class="terms">
+                    <small> By clicking on the button you are agreeing to our <span class="t-c">Terms and
+                            Services</span></small>
+                </div>
+            </div>
+
+
+        </div>
+        {% endblock content %}
+   
