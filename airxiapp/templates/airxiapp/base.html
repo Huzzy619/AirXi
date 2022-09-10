@@ -73,7 +73,10 @@
             <p><a href="{% url 'contact' %}">CONTACT</a></p>
             {% if not request.user.is_authenticated %}
             <p><a href="{% url 'login' %}">LOGIN</a></p>
+            {% else %}
+            <p><a href="{% url 'logout' %}">LOGOUT</a></p>
             {% endif %}
+
 
           </div>
           <div class="phone-cover phonenav">

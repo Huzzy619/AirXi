@@ -1,5 +1,6 @@
 {% extends 'accounts/base.html' %}
 {% load static %}
+{% load socialaccount %}
 
     {% block title %}
     <title> Register | Ride with AirXi</title>
@@ -47,16 +48,14 @@
 
                     <button type="submit" class="claim">JOIN NOW</button>
                 </form>
-
-                    <a href="" style="text-decoration: none;">
-                        <div class="google">
+                    <form action="{% url 'google_login' %}" method="post">
+                        {% csrf_token %}
+                        <button class="google" type="submit">
                             <img src="{% static 'accounts/images/Google_Icon.webp' %}" alt="google" class="google-img">
-                            <div class="google-text">
-                                Continue with Google
+                            Sign in with Google
 
-                            </div>
-                        </div>
-                    </a>
+                        </button>
+                    </form>
                     
 
                     <div class="terms">

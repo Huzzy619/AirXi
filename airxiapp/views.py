@@ -119,6 +119,6 @@ def test(request):
 
     from airxiapp.models import Taxi
 
-    Taxi.objects.filter()
+    print(Taxi.objects.filter())
     
     return render(request, 'airxiapp/test.html')

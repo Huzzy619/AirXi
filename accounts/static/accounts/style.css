@@ -152,6 +152,20 @@ main {
     padding: 5px 0 20px;
 }
 
+ .forgot-pass{
+
+    margin-top: 30px;
+    float: right;
+    font-size: small;
+    text-decoration: none;
+    color: grey;
+}
+
+.forgot-pass:hover{
+    color: black;
+    cursor: pointer;
+} 
+
 .claim {
     color: white;
     background-color: hsl(154, 59%, 51%);
@@ -171,6 +185,9 @@ main {
     opacity: 0.7;
 }
 
+.log{
+    margin-top: 10px;
+}
 /* .claim input{
     border: none;
     outline: none;
@@ -195,6 +212,9 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: white;
+    font-family: 'Poppins', sans-serif;
+
 
 }
 .google:hover {

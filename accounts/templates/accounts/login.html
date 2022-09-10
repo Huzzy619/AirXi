@@ -1,5 +1,6 @@
 {% extends 'accounts/base.html' %}
 {% load static %}
+{% load socialaccount %}
     {% block title %}
     <title> Login | Ride with AirXi</title>
     {% endblock title %}
@@ -36,25 +37,27 @@
 
                     </div>
 
-                    <a href="{% url 'password_reset' %}"> Forgot Password ?</a>
-                    <button type="submit" class="claim">LOGIN</button>
+                    
+                    <a href="{% url 'password_reset' %}" class="forgot-pass"> Forgot Password ?</a>
 
+                    
+                    <button type="submit" class="claim log" >LOGIN</button>
 
-                    <a href="https://google.com" style="text-decoration: none;">
-                        <div class="google">
+                    </form>
+
+                    <form action="{% url 'google_login' %}" method="post">
+                        {% csrf_token %}
+                        <button class="google" type="submit">
                             <img src="{% static 'accounts/images/Google_Icon.webp' %}" alt="google" class="google-img">
-                            <div>
-                                Sign in with Google
+                            Sign in with Google
 
-                            </div>
-                        </div>
-                    </a>
+                        </button>
+                    </form>
                     <div class="terms">
                         Don't have an account ? <a href="{% url 'register' %}" style="text-decoration: none;"> <span class="log-reg">Click
                                 here to Register</span> </a>
                     </div>
 
-                </form>
             </div>
 
 
